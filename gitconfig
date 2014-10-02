@@ -1,49 +1,40 @@
 [user]
-	name = Grégoire Paris
-	email = gparis@universcine.com
+  name = lowki93
+  email = budain.kevin@yahoo.Fr
 [color]
-	diff = auto
-	status = auto
-	branch = auto
-	ui = true
+  branch = auto
+  diff = auto
+  status = auto
+  ui = true
 
 [color "branch"]
-	current = yellow reverse
-	local = yellow
-	remote = green
+  current = yellow reverse
+  local = yellow
+  remote = green
 
 [color "diff"]
-	meta = yellow bold
-	frag = magenta bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+  whitespace = red reverse
 
 [color "status"]
-	added = yellow
-	changed = green
-	untracked = cyan
+  added = yellow
+  changed = green
+  untracked = cyan
 
 [merge]
-	keepBackup = false
-	tool = vimdiff
+  keepBackup = false
+  tool = vimdiff
 [core]
+  pager = most
+  excludesfile = ~/.gitignore_global
 	editor = vim
-	pager = most
-	excludesfile = ~/.gitignore_global
 [alias]
-	lol = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-	lola = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
-[push]
-	default = simple
+  lol = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  lola = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
 [init]
 	templatedir = ~/.git_template
-[hooks "junkchecker"]
-	phrasesfile = .git/hooks/junkchecker/junk-phrases.sample
-[hooks "php-sismo"]
-	path = /usr/share/nginx/html/sismo.php
-[hooks "notification"]
-	notifier = notify-send
-[hooks]
-	enabled-plugins = wipchecker
-	enabled-plugins = junkchecker
+[push]
+	default = simple
