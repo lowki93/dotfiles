@@ -1,6 +1,7 @@
 *~
 .idea
 *.swp
+*.orig
 tags
 .rsync_cache
 .sass-cache
