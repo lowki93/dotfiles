@@ -31,6 +31,8 @@
   pager = most
   excludesfile = ~/.gitignore_global
 	editor = vim
+[init]
+  templatedir = ~/.git_template/template
 [alias]
   lol = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   lola = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
