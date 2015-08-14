@@ -107,7 +107,7 @@ plivo_connection() {
     launch_ngrok
 }
 
-removeDerivedData() {
+removeAllDataXcode() {
     #Save the starting dir
     startingDir=$PWD
 
