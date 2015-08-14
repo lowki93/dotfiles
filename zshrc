@@ -37,7 +37,7 @@ DEFAULT_USER="lowki"
 # much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Uncomment following line if you want to  shown in the command execution time stamp 
+# Uncomment following line if you want to  shown in the command execution time stamp
 # in the history command output. The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|
 # yyyy-mm-dd
 # HIST_STAMPS="mm/dd/yyyy"
@@ -45,13 +45,13 @@ DEFAULT_USER="lowki"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(django git ssh-agent composer symfony2 bower)
+plugins=(osx terminalapp django git ssh-agent composer symfony2 bower)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin"
+export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # # Preferred editor for local and remote sessions
@@ -79,4 +79,55 @@ alias subl='open -a "Sublime Text"'
 #for Chrome
 alias chrome='open -a "Google Chrome"'
 
+alias aircall=' cd /Users/lowki/workspace/aircall'
+
 PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH"
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="/usr/local/sbin:$PATH"
+
+alias rails='bundle exec rails'
+
+execute_plivo_pure_outband(){
+    osascript -e "tell application \"Terminal\"" \
+    -e "tell application \"System Events\" to keystroke \"t\" using {command down}" \
+    -e "do script \"cd ~/workspace/aircall/plivo-pure-outbound; ruby config.ru;\" in front window" \
+    -e "end tell"
+}
+
+launch_ngrok(){
+    osascript -e "tell application \"Terminal\"" \
+    -e "tell application \"System Events\" to keystroke \"t\" using {command down}" \
+    -e "do script \"cd ~/workspace/aircall; ./ngrok -authtoken cTtr2jBaDami/zBwCKzK --subdomain=kevin-aircall 4567 ;\" in front window" \
+    -e "end tell"
+}
+
+plivo_connection() {
+    execute_plivo_pure_outband
+    launch_ngrok
+}
+
+removeDerivedData() {
+    #Save the starting dir
+    startingDir=$PWD
+
+    #Go to the derivedData
+    cd ~/Library/Developer/Xcode/DerivedData
+
+    #Sometimes, 1 file remains, so loop until no files remain
+    numRemainingFiles=1
+    while [ $numRemainingFiles -gt 0 ]; do
+        #Delete the files, recursively
+        rm -rf *
+
+        #Update file count
+        numRemainingFiles=`ls | wc -l`
+    done
+    rm -rf ~/Library/Caches/com.apple.dt.Xcode
+    cd /Library/Developer/CoreSimulator/Profiles/Runtimes
+    rm -rf *
+    echo Done
+
+    #Go back to starting dir
+    cd $startingDir
+}
