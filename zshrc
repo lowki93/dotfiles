@@ -80,13 +80,25 @@ alias subl='open -a "Sublime Text"'
 alias chrome='open -a "Google Chrome"'
 
 alias aircall=' cd /Users/lowki/workspace/aircall'
-
+alias keepster='cd /Users/lowki/workspace/keepster'
+alias textr='cd /Users/lowki/workspace/textr'
+alias Vagrant='cd /Users/lowki/Vagrant/Nginx'
+alias vi='/usr/local/bin/vim'
+alias emacs='/usr/local/bin/emacs'
 PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH"
+
+export PATH=$PATH:/Users/lowki/Library/Android/sdk/platform-tools
+export PATH=$PATH:/Users/lowki/Library/Android/sdk/tools
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="/usr/local/sbin:$PATH"
 
 alias rails='bundle exec rails'
+alias be='bundle exec'
+alias createairc='/Users/lowki/workspace/aircall/start_tmux.sh'
+alias killairc='tmux kill-session -t aircall'
+alias joinairc='tmux attach-session -t aircall'
+alias listtmux='tmux list-session'
 
 execute_plivo_pure_outband(){
     osascript -e "tell application \"Terminal\"" \
@@ -124,10 +136,29 @@ removeAllDataXcode() {
         numRemainingFiles=`ls | wc -l`
     done
     rm -rf ~/Library/Caches/com.apple.dt.Xcode
-    cd /Library/Developer/CoreSimulator/Profiles/Runtimes
-    rm -rf *
     echo Done
 
     #Go back to starting dir
     cd $startingDir
 }
+
+reindex_spotlight() {
+    sudo mdutil -E /
+}
+
+export textr_db_redis=zoulou
+export txtr_db_prod_host=95.85.53.218
+export txtr_db_prod_user=merguezito
+export txtr_db_prod_password=merguez
+export txtr_db_prod_pass=merguez
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+export PATH="$HOME/.fastlane/bin:$PATH"
+
+# AIRCALL
+export AIRCALL_BRIDGE_LOCAL_URL="http://kevin-aircall-bridge.ngrok.io"
+export AIRCALL_LIVECALL_LOCAL_URL="http://kevin-aircall-livecall.ngrok.io"
+export AIRCALL_WEB_LOCAL_URL="http://kevin-aircall-web.ngrok.io"
+
+source ~/.functions/aws.sh
