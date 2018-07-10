@@ -67,8 +67,6 @@ export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:$PA
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-#for mysql
-export PATH="/usr/local/mysql/bin:$PATH"
 
 #for open Sites
 alias Sites="cd ~/Sites"
@@ -79,23 +77,21 @@ alias subl='open -a "Sublime Text"'
 #for Chrome
 alias chrome='open -a "Google Chrome"'
 
-alias aircall=' cd /Users/lowki/workspace/aircall'
-alias keepster='cd /Users/lowki/workspace/keepster'
-alias textr='cd /Users/lowki/workspace/textr'
-alias Vagrant='cd /Users/lowki/Vagrant/Nginx'
+alias aircall=' cd /Users/lowki93/workspace/aircall'
 alias vi='/usr/local/bin/vim'
 alias emacs='/usr/local/bin/emacs'
 PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH"
+PATh="/usr/local/mysql-5.7.22-macos10.13-x86_64/bin:$PATH"
 
-export PATH=$PATH:/Users/lowki/Library/Android/sdk/platform-tools
-export PATH=$PATH:/Users/lowki/Library/Android/sdk/tools
+export PATH=$PATH:/Users/lowki93/Library/Android/sdk/platform-tools
+export PATH=$PATH:/Users/lowki93/Library/Android/sdk/tools
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="/usr/local/sbin:$PATH"
 
 alias rails='bundle exec rails'
 alias be='bundle exec'
-alias createairc='/Users/lowki/workspace/aircall/start_tmux.sh'
+alias createairc='/Users/lowki93/workspace/aircall/start_tmux.sh'
 alias killairc='tmux kill-session -t aircall'
 alias joinairc='tmux attach-session -t aircall'
 alias listtmux='tmux list-session'
@@ -162,3 +158,5 @@ export AIRCALL_LIVECALL_LOCAL_URL="http://kevin-aircall-livecall.ngrok.io"
 export AIRCALL_WEB_LOCAL_URL="http://kevin-aircall-web.ngrok.io"
 
 source ~/.functions/aws.sh
+
+PATH="/Users/lowki93/Library/Python/2.7/bin:$PATH"
